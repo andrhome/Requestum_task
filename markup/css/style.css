@@ -1,0 +1,263 @@
+@font-face {
+	font-family: 'MyriadPro';
+	src: url('../fonts/MyriadPro-Regular.eot');
+	src: local('☺'), url('../fonts/MyriadPro-Regular.woff') format('woff'), 
+	url('../fonts/MyriadPro-Regular.ttf') format('truetype'), 
+	url('../fonts/MyriadPro-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*---Global Reset---*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+/*---Custom Reset---*/
+ol, ul {
+	list-style: none;
+}
+blockquote, q{
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Common site styles */
+body{
+	font: 14px 'Ubuntu', sans-serif;
+	color: #333333;
+}
+body a, body a:active, body a:hover, body a:focus{
+	text-decoration: none;
+}
+#wrapper{
+	background: #efeeee;
+}
+
+/***Main content***/
+#main-content{
+	max-width: 1250px;
+	background: #fff;
+	margin: 0 auto;
+	padding-bottom: 70px;
+}
+.goods-list{
+	padding: 40px 0;
+}
+.good{
+	border: 1px solid #e5e5e5;
+	box-shadow: 0 0 10px 3px #e5e5e5;
+	padding: 10px;
+	margin-bottom: 50px;
+	position: relative;
+}
+.good .img-holder{
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	padding: 15px;
+	margin: -30px 0 18px;
+}
+.good .img-holder img{
+	width: 100%;
+	display: block;
+}
+.good .sale-new{
+	display: inline-block;
+	text-align: justify; 
+	position: absolute;
+	top: 29%;
+	left: 10px;
+	right: 10px;
+}
+.sale-new:after{
+	content: '';
+	width: 100%;
+	display: inline-block;
+}
+.sale-new span{
+	display: inline-block;
+	width: 70px;
+	font-size: 13px;
+	font-weight: 500;
+	text-transform: uppercase;
+	color: #fff;
+	text-align: center;
+	padding: 12px 0;
+}
+.sale-new .sale{
+	background: #ed1111;
+}
+.sale-new .new{
+	background: #000;
+}
+.good .title{
+	height: 17px;
+	overflow: hidden;
+	margin-bottom: 13px;
+}
+.good .description p{
+	height: 30px;
+	font-size: 11px;
+	line-height: 15px;
+	color: #a5a4a4;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.good .price{
+	font-size: 25px;
+	margin-bottom: 25px;
+}
+.good .firs-price{
+	display: inline-block;
+	font-size: 17px;
+	color: #ed1111;
+	margin-left: 20px; 
+}
+.good .links-holder{
+	text-align: justify;
+	line-height: 0;
+    font-size: 0;
+}
+.good .links-holder:after{
+	content: '';
+	width: 100%;
+	display: inline-block;
+}
+.good .links-holder a{
+	width: 48.5%;
+	display: inline-block;
+	font-size: 13px;
+	line-height: normal;
+	font-weight: 500;
+	text-align: center;
+	text-transform: uppercase;
+	border: 1px solid #e5e5e5;
+	padding: 11px 0;
+}
+.good .add{
+	color: #ed1111;
+	background: #ed8e8e;
+}
+.good .add:hover{
+	background: #f97e7e;
+}
+.good .view{
+	color: #999e9f;
+	background: #d9d9d9;
+}
+.good .view:hover{
+	background: #cdcaca;
+}
+.load-more-holder{
+	text-align: center;
+}
+.load-more{
+	display: inline-block;
+	width: 120px;
+	font-size: 13px;
+	font-family: 'MyriadPro';
+	color: #ed1111;
+	text-transform: uppercase;
+	text-align: center;
+	border: 1px solid #e5e5e5;
+	padding: 11px 0;
+}
+.load-more:hover{
+	color: #fff;
+	background: #ed1111;
+	border: 1px solid #ed1111;
+}
+
+/***Footer***/
+#footer{
+	max-width: 1250px;
+	background: #fff;
+	padding-bottom: 60px;
+	margin: 0 auto;
+}
+#footer .item{
+	min-height: 315px;
+	font-size: 11px;
+	font-weight: 300;
+	line-height: 16px;
+	color: #a5a4a4;
+	border: 1px solid #e5e5e5;
+	padding: 45px 25px 27px;
+	margin-bottom: 30px;
+}
+#footer .item h2{
+	font-size: 18px;
+	font-family: 'Raleway', sans-serif;
+	color: #333333;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+#footer .item p{
+	margin-bottom: 13px;
+}
+#footer .item ul li{
+	position: relative;
+	padding-left: 15px;
+}
+#footer .item ul li:not(:last-child){
+	margin-bottom: 13px;
+}
+#footer .item ul li:before{
+	content: '';
+	border: 4px solid;
+	border-color: #fff #fff #fff #ed1111;
+	position: absolute;
+	top: 4px;
+	left: 0;
+}
+.info-list .info-row{
+	line-height: 18px;
+	display: flex;
+    align-items: center;
+}
+.info-list .info-row:not(:last-child){
+	margin-bottom: 17px;
+}
+.info-list .info-row i{
+	display: inline-block;
+	width: 28px;
+	font-size: 29px;
+	text-align: center;
+	color: #ed1111;
+	margin-right: 8px;
+}
+.info-list .info-row a{
+	color: #a5a4a4;
+}
+.info-list .info-row a:hover{
+	text-decoration: underline;
+}
