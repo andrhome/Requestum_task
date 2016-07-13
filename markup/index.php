@@ -1,3 +1,7 @@
+<?php
+    require __DIR__ . "/model.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,8 +30,7 @@
                                     <div class="title"><?php echo $item['title']; ?></div>
                                     <div class="description"><?php echo $item['description']; ?></div>
                                     <div class="discout-cost">
-                                        <?php echo $item['discountCost'] ? $item['discountCost'] : $item['cost']; ?>
-                                        <!-- <strike class="cost">$299.00</strike> -->
+                                        <?php echo $item['discountCost'] ? $item['discountCost'] :?> <strike class="cost"> <?php $item['cost'];?> </strike>
                                     </div>
                                 </div>
                                 <?php if ($item['discountCost'] !== null): ?>

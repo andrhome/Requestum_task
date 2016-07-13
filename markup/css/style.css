@@ -58,6 +58,10 @@ body{
 }
 body a, body a:active, body a:hover, body a:focus{
 	text-decoration: none;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
 }
 #wrapper{
 	background: #efeeee;
@@ -75,36 +79,30 @@ body a, body a:active, body a:hover, body a:focus{
 }
 .good{
 	border: 1px solid #e5e5e5;
-	box-shadow: 0 0 10px 3px #e5e5e5;
 	padding: 10px;
 	margin-bottom: 50px;
 	position: relative;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+.good:hover{
+	box-shadow: 0 0 10px 3px #e5e5e5;
 }
 .good .img-holder{
+	min-height: 265px;
+	text-align: center;
 	background: #fff;
 	border: 1px solid #e5e5e5;
-	padding: 15px;
+	padding: 15px 15px 5px;
 	margin: -30px 0 18px;
 }
 .good .img-holder img{
-	width: 100%;
-	display: block;
+	max-width: 100%;
 }
-.good .sale-new{
-	display: inline-block;
-	text-align: justify; 
-	position: absolute;
-	top: 29%;
-	left: 10px;
-	right: 10px;
-}
-.sale-new:after{
-	content: '';
-	width: 100%;
-	display: inline-block;
-}
-.sale-new span{
-	display: inline-block;
+.good .sale,
+.good .new{
 	width: 70px;
 	font-size: 13px;
 	font-weight: 500;
@@ -112,19 +110,23 @@ body a, body a:active, body a:hover, body a:focus{
 	color: #fff;
 	text-align: center;
 	padding: 12px 0;
+	position: absolute;
+	top: 29%;
 }
-.sale-new .sale{
+.good .sale{
 	background: #ed1111;
+	left: 10px;
 }
-.sale-new .new{
+.good .new{
 	background: #000;
+	right: 10px;
 }
 .good .title{
 	height: 17px;
 	overflow: hidden;
 	margin-bottom: 13px;
 }
-.good .description p{
+.good .description{
 	height: 30px;
 	font-size: 11px;
 	line-height: 15px;
@@ -132,11 +134,15 @@ body a, body a:active, body a:hover, body a:focus{
 	overflow: hidden;
 	margin-bottom: 20px;
 }
-.good .price{
+.good .discout-cost{
 	font-size: 25px;
 	margin-bottom: 25px;
 }
-.good .firs-price{
+.good.discount .discout-cost{
+	font-size: 25px;
+	margin-bottom: 25px;
+}
+.good .cost{
 	display: inline-block;
 	font-size: 17px;
 	color: #ed1111;
@@ -165,10 +171,10 @@ body a, body a:active, body a:hover, body a:focus{
 }
 .good .add{
 	color: #ed1111;
-	background: #ed8e8e;
+	background: #fff;
 }
 .good .add:hover{
-	background: #f97e7e;
+	background: #ed8e8e;
 }
 .good .view{
 	color: #999e9f;
@@ -241,23 +247,54 @@ body a, body a:active, body a:hover, body a:focus{
 }
 .info-list .info-row{
 	line-height: 18px;
-	display: flex;
-    align-items: center;
+	display: table;
 }
 .info-list .info-row:not(:last-child){
 	margin-bottom: 17px;
 }
 .info-list .info-row i{
-	display: inline-block;
+	display: table-cell;
 	width: 28px;
+	vertical-align: middle;
 	font-size: 29px;
 	text-align: center;
 	color: #ed1111;
-	margin-right: 8px;
+	padding-right: 8px;
+}
+.info-list .info-row span{
+	display: table-cell;
+	vertical-align: middle;
 }
 .info-list .info-row a{
 	color: #a5a4a4;
 }
 .info-list .info-row a:hover{
 	text-decoration: underline;
+}
+
+/***Media requests***/
+@media(max-width: 1199px) {
+	#footer .item{
+		min-height: 367px;
+	}
+}
+@media(max-width: 992px) {
+	#footer .item{
+		min-height: 320px;
+	}
+}
+@media(max-width: 767px) {
+	.good{
+		max-width: 360px;
+    	margin: 0 auto 50px;
+	}
+	#footer .item{
+		max-width: 360px;
+    	margin: 0 auto 30px;
+	}
+}
+@media(max-width: 480px) {
+	.good, #footer .item{
+		max-width: 290px;
+	}
 }
