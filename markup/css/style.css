@@ -87,6 +87,9 @@ body a, body a:active, body a:hover, body a:focus{
 	-ms-transition: all .3s ease-in-out;
 	transition: all .3s ease-in-out;
 }
+.good.load{
+	opacity: 0;
+}
 .good:hover{
 	box-shadow: 0 0 10px 3px #e5e5e5;
 }
@@ -147,14 +150,8 @@ body a, body a:active, body a:hover, body a:focus{
 	margin-left: 20px; 
 }
 .good .links-holder{
-	text-align: justify;
 	line-height: 0;
     font-size: 0;
-}
-.good .links-holder:after{
-	content: '';
-	width: 100%;
-	display: inline-block;
 }
 .good .links-holder a{
 	width: 48.5%;
@@ -177,6 +174,7 @@ body a, body a:active, body a:hover, body a:focus{
 .good .view{
 	color: #999e9f;
 	background: #d9d9d9;
+	float: right;
 }
 .good .view:hover{
 	background: #cdcaca;

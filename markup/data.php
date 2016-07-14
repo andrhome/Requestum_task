@@ -71,6 +71,6 @@ return [
         'cost' => 249,
         'discountCost' => null,
         'new' => false,
-        'img'  => '/img/img_product.png',
+        'img'  => '/img/img-1.png',
     ],
 ];

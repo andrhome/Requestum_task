@@ -18,8 +18,8 @@
 <body>
     <div id="wrapper">
         <main id="main-content">
-            <div class="container goods-list">
-                <div class="row">
+            <div class="container">
+                <div class="row goods-list">
                     <?php foreach (getItems(1, 4) as $item): ?>
                         <div class="col-md-3 col-sm-6">
                             <div class="good">
@@ -47,171 +47,10 @@
                             </div>
                         </div>
                     <?php endforeach; ?>
-
-                    <!-- <div class="col-md-3 col-sm-6">
-                        <div class="good">
-                            <div class="img-holder">
-                                <img src="images/img-1.png" alt="Good">
-                            </div>
-                            <div class="sale-new">
-                                <span class="sale">Sale</span>
-                                <span class="new">New</span>
-                            </div>
-                            <div class="description-block">
-                                <div class="title">Lorem ipsum dolor sit amet</div>
-                                <div class="description">Adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy </div>
-                                <div class="discout-cost">$249.00 <strike class="cost">$299.00</strike></div>
-                            </div>
-                            <div class="links-holder">
-                                <a href="#" class="add">Add to cart</a>
-                                <a href="#" class="view">View</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="good">
-                            <div class="img-holder">
-                                <img src="images/img-2.png" alt="Good">
-                            </div>
-                            <div class="sale-new">
-                                <span class="sale">Sale</span>
-                                <span class="new">New</span>
-                            </div>
-                            <div class="description-block">
-                                <div class="title">Lorem ipsum dolor sit amet</div>
-                                <div class="description">Adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy </div>
-                                <div class="discout-cost">$249.00 <strike class="cost">$299.00</strike></div>
-                            </div>
-                            <div class="links-holder">
-                                <a href="#" class="add">Add to cart</a>
-                                <a href="#" class="view">View</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="good">
-                            <div class="img-holder">
-                                <img src="images/img-3.png" alt="Good">
-                            </div>
-                            <div class="sale-new">
-                                <span class="sale">Sale</span>
-                                <span class="new">New</span>
-                            </div>
-                            <div class="description-block">
-                                <div class="title">Lorem ipsum dolor sit amet</div>
-                                <div class="description">Adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy </div>
-                                <div class="discout-cost">$249.00 <strike class="cost">$299.00</strike></div>
-                            </div>
-                            <div class="links-holder">
-                                <a href="#" class="add">Add to cart</a>
-                                <a href="#" class="view">View</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="good">
-                            <div class="img-holder">
-                                <img src="images/img-4.png" alt="Good">
-                            </div>
-                            <div class="sale-new">
-                                <span class="sale">Sale</span>
-                                <span class="new">New</span>
-                            </div>
-                            <div class="description-block">
-                                <div class="title">Lorem ipsum dolor sit amet</div>
-                                <div class="description">Adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy </div>
-                                <div class="discout-cost">$249.00 <strike class="cost">$299.00</strike></div>
-                            </div>
-                            <div class="links-holder">
-                                <a href="#" class="add">Add to cart</a>
-                                <a href="#" class="view">View</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="good">
-                            <div class="img-holder">
-                                <img src="images/img-5.png" alt="Good">
-                            </div>
-                            <div class="sale-new">
-                                <span class="sale">Sale</span>
-                                <span class="new">New</span>
-                            </div>
-                            <div class="description-block">
-                                <div class="title">Lorem ipsum dolor sit amet</div>
-                                <div class="description">Adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy </div>
-                                <div class="discout-cost">$249.00 <strike class="cost">$299.00</strike></div>
-                            </div>
-                            <div class="links-holder">
-                                <a href="#" class="add">Add to cart</a>
-                                <a href="#" class="view">View</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="good">
-                            <div class="img-holder">
-                                <img src="images/img-6.png" alt="Good">
-                            </div>
-                            <div class="sale-new">
-                                <span class="sale">Sale</span>
-                                <span class="new">New</span>
-                            </div>
-                            <div class="description-block">
-                                <div class="title">Lorem ipsum dolor sit amet</div>
-                                <div class="description">Adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy </div>
-                                <div class="discout-cost">$249.00</div>
-                            </div>
-                            <div class="links-holder">
-                                <a href="#" class="add">Add to cart</a>
-                                <a href="#" class="view">View</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="good">
-                            <div class="img-holder">
-                                <img src="images/img-7.png" alt="Good">
-                            </div>
-                            <div class="sale-new">
-                                <span class="sale">Sale</span>
-                                <span class="new">New</span>
-                            </div>
-                            <div class="description-block">
-                                <div class="title">Lorem ipsum dolor sit amet</div>
-                                <div class="description">Adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy </div>
-                                <div class="discout-cost">$249.00 <strike class="cost">$299.00</strike></div>
-                            </div>
-                            <div class="links-holder">
-                                <a href="#" class="add">Add to cart</a>
-                                <a href="#" class="view">View</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="good">
-                            <div class="img-holder">
-                                <img src="images/img-8.png" alt="Good">
-                            </div>
-                            <div class="sale-new">
-                                <span class="sale">Sale</span>
-                                <span class="new">New</span>
-                            </div>
-                            <div class="description-block">
-                                <div class="title">Lorem ipsum dolor sit amet</div>
-                                <div class="description">Adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy </div>
-                                <div class="discout-cost">$249.00 <strike class="cost">$299.00</strike></div>
-                            </div>
-                            <div class="links-holder">
-                                <a href="#" class="add">Add to cart</a>
-                                <a href="#" class="view">View</a>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
             <div class="load-more-holder">
-                <a href="#" class="load-more">Load more</a>
+                <a href="#" class="load-more" onclick="return false">Load more</a>
             </div>
         </main>
         <footer id="footer">
@@ -271,7 +110,6 @@
             </div>
         </footer>
     </div>
-    <script src="js/jquery-2.2.2.min.js"></script>
     <script src="js/main.js"></script>  
 </body>
 </html>

@@ -1,81 +1,100 @@
 document.addEventListener('DOMContentLoaded', function() {
 	
 	function Goods() {
-		var self = this,
-			loadMore = document.querySelector('.load-more');
-
-		self.count = 1;
+		var self = this;
+		self.loadMore = document.querySelector('.load-more');
+		self.count = 2;
 
 		this.getAjax(self);
-		loadMore.addEventListener('click', this.getAjax.bind(this, self));
+
+		self.loadMore.addEventListener('click', function() {
+			self.showGoods(self.xhrObj.entities);
+
+			if(self.count + 4 >= self.xhrObj.total) {
+				self.loadMore.style.cssText = 'display: none';
+			};
+		});
 	};
 
-	Goods.prototype.getAjax = function(self) {
+	Goods.prototype.getAjax = function() {
 		var xhr = new XMLHttpRequest(),
-			counter = self.count++;
+			self = this;
+		self.counter = self.count++;
 
-		console.log('counter', counter);
-		xhr.open('get', 'list.php?per_page=4&page='+ counter);
+		xhr.open('get', 'list.php?per_page=4&page='+ self.counter);
 
 		xhr.onreadystatechange = function() {
 
 			if(xhr.status == 200 && xhr.readyState == 4) {
-				var xhrObj = JSON.parse(xhr.responseText);
-				console.log(xhrObj);
+				self.xhrObj = JSON.parse(xhr.responseText);
 			};
 		};
 
 		xhr.send();
 	};
 
+	Goods.prototype.showGoods = function(obj) {
+		var goodsList = document.querySelector('.goods-list'),
+			template = '';
+
+		var checkDiscount = function() {
+			if(obj[i].discountCost) {
+				return '$' + obj[i].discountCost;
+			} else{
+				return '$' + obj[i].cost;
+			};
+		};
+
+		var discountNotNull = function() {
+			if(obj[i].discountCost !== null) {
+				return '<strike class="cost">' + '$' + obj[i].cost + '</strike>' + '<div class="sale">Sale</div>';
+			} else{
+				return '';
+			};
+		};
+
+		var checkNew = function() {
+			if(obj[i].new) {
+				return '<div class="new">New</div>';
+			} else{
+				return '';
+			};
+		};
+
+		for (var i = 0; i < obj.length; i++) {
+			template += '<div class="col-md-3 col-sm-6">' + 
+	                    '<div class="good load">' +
+	                        '<div class="img-holder">' +
+	                            '<img src="' + obj[i].img + '" alt="">' +
+	                        '</div>' +                                    
+	                        '<div class="description-block">' +
+	                            '<div class="title">' + obj[i].title + '</div>' +
+	                            '<div class="description">' + obj[i].description + '</div>' +
+	                            '<div class="discount-cost">' +
+	                            	(checkDiscount()) +
+	                            '</div>' +
+	                            	(discountNotNull()) +
+	                            	(checkNew()) +
+	                        '</div>' +
+	                        '<div class="links-holder">' +
+	                            '<a href="#" class="add">Add to cart</a>' +
+	                            '<a href="#" class="view">View</a>' +
+	                        '</div>' +
+	                    '</div>' +
+	                '</div>';
+		};
+
+		goodsList.insertAdjacentHTML('beforeEnd', template);
+
+		setTimeout(function() {
+			var goodsLoad = document.querySelectorAll('.good.load');
+			for (var i = 0; i < goodsLoad.length; i++) {
+				goodsLoad[i].style.cssText = 'opacity: 1';
+			}
+		}, 100);
+
+		this.getAjax();
+	}; 
+
 	new Goods();
 });
-
-
-// $(document).ready(function() {
-
-// 	var count = 1;
-
-// 	function getAjax() {
-// 		$.ajax({
-// 		    url:'list.php' ,
-// 		    type: 'GET',
-// 		    data: {per_page: 4, page: count++},
-// 		    success: function(data) {
-// 		    	var dataObj = JSON.parse(data);
-// 		        console.log(dataObj);
-// 		    }
-// 		});
-// 	};
-// 	getAjax();
-
-// 	// function showGoods() {
-// 	// 	var htm = '<div class="col-md-3 col-sm-6">
-//  //                        <div class="good">
-//  //                            <div class="img-holder">
-//  //                                <img src="<?php echo $item['img']; ?>" alt="<?php echo $item['title']; ?>">
-//  //                            </div>                                        
-//  //                            <div class="description-block">
-//  //                                <div class="title"><?php echo $item['title']; ?></div>
-//  //                                <div class="description"><?php echo $item['description']; ?></div>
-//  //                                <div class="discount-cost">
-//  //                                    $<?php echo $item['discountCost'] ? $item['discountCost'] : $item['cost']; ?>
-//  //                                </div>
-//  //                            <?php if ($item['discountCost'] !== null): ?>
-//  //                                <strike class="cost">$<?php echo $item['cost']; ?></strike>
-//  //                                <div class="sale">Sale</div>
-//  //                            <?php endif; ?>
-//  //                            <?php if ($item['new']): ?>
-//  //                                <div class="new">New</div>
-//  //                            <?php endif; ?>
-//  //                            </div>
-//  //                            <div class="links-holder">
-//  //                                <a href="#" class="add">Add to cart</a>
-//  //                                <a href="#" class="view">View</a>
-//  //                            </div>
-//  //                        </div>
-//  //                    </div>';
-// 	// };
-
-// 	$(document).on('click', '.load-more', getAjax);
-// });
