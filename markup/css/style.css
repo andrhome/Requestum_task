@@ -126,6 +126,9 @@ body a, body a:active, body a:hover, body a:focus{
 	overflow: hidden;
 	margin-bottom: 13px;
 }
+.good .description-block{
+	margin-bottom: 25px;
+}
 .good .description{
 	height: 30px;
 	font-size: 11px;
@@ -134,16 +137,11 @@ body a, body a:active, body a:hover, body a:focus{
 	overflow: hidden;
 	margin-bottom: 20px;
 }
-.good .discout-cost{
+.good .discount-cost{
+	display: inline-block;
 	font-size: 25px;
-	margin-bottom: 25px;
-}
-.good.discount .discout-cost{
-	font-size: 25px;
-	margin-bottom: 25px;
 }
 .good .cost{
-	display: inline-block;
 	font-size: 17px;
 	color: #ed1111;
 	margin-left: 20px; 

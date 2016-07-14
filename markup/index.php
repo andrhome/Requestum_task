@@ -29,17 +29,17 @@
                                 <div class="description-block">
                                     <div class="title"><?php echo $item['title']; ?></div>
                                     <div class="description"><?php echo $item['description']; ?></div>
-                                    <div class="discout-cost">
-                                        <?php echo $item['discountCost'] ? $item['discountCost'] :?> <strike class="cost"> <?php $item['cost'];?> </strike>
+                                    <div class="discount-cost">
+                                        $<?php echo $item['discountCost'] ? $item['discountCost'] : $item['cost']; ?>
                                     </div>
-                                </div>
                                 <?php if ($item['discountCost'] !== null): ?>
-                                    <?php echo $item['cost']; ?>
+                                    <strike class="cost">$<?php echo $item['cost']; ?></strike>
                                     <div class="sale">Sale</div>
                                 <?php endif; ?>
                                 <?php if ($item['new']): ?>
                                     <div class="new">New</div>
                                 <?php endif; ?>
+                                </div>
                                 <div class="links-holder">
                                     <a href="#" class="add">Add to cart</a>
                                     <a href="#" class="view">View</a>
@@ -271,6 +271,7 @@
             </div>
         </footer>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/jquery-2.2.2.min.js"></script>
+    <script src="js/main.js"></script>  
 </body>
 </html>
